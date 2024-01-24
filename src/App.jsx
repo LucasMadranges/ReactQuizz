@@ -1,13 +1,21 @@
 import {useState} from 'react'
 import './App.css'
-import DateCounter from "./DateCounter.jsx";
+import Header from "./Header.jsx";
+import MainComponent from "./MainComponent.jsx";
 
 function App() {
     const [count, setCount] = useState(0)
 
     return (
         <>
-            <DateCounter/>
+            <div className='app'>
+                <Header/>
+
+                <MainComponent>
+                    <p>1/15</p>
+                    <p>Question?</p>
+                </MainComponent>
+            </div>
         </>
     )
 }

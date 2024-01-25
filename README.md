@@ -11,6 +11,6 @@ Currently, two official plugins are available:
 
 Using dev tools :
 
-- Concurrency: Multiple npm script in one command.
+- Concurrently: Multiple npm script in one command.
 - Vite: For creating a simple React templates.
 - JSON-Server: For generate a "fake" API.

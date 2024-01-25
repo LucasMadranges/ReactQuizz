@@ -1,7 +1,7 @@
 import {useState} from 'react'
 import './App.css'
-import Header from "./Header.jsx";
-import MainComponent from "./MainComponent.jsx";
+import Header from "./components/Header.jsx";
+import MainComponent from "./components/MainComponent.jsx";
 
 function App() {
     const [count, setCount] = useState(0)

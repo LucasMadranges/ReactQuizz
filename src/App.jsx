@@ -2,6 +2,9 @@ import {useEffect, useReducer} from 'react'
 import './App.css'
 import Header from "./components/Header.jsx";
 import MainComponent from "./components/MainComponent.jsx";
+import Loader from "./components/Loader.jsx";
+import Error from "./components/Error.jsx";
+import StartScreen from "./components/StartScreen.jsx";
 
 const initialState = {
     questions: [],
@@ -28,7 +31,9 @@ function reducer(state, action) {
 }
 
 function App() {
-    const [state, dispatch] = useReducer(reducer, initialState);
+    const [{questions, status}, dispatch] = useReducer(reducer, initialState);
+
+    const numQuestions = questions.length;
 
     useEffect(() => {
         async function DataFecthing() {
@@ -52,8 +57,9 @@ function App() {
                 <Header/>
 
                 <MainComponent>
-                    <p>1/15</p>
-                    <p>Question?</p>
+                    {status === 'loading' && <Loader/>}
+                    {status === 'error' && <Error/>}
+                    {status === 'ready' && <StartScreen numQuestions={numQuestions}/>}
                 </MainComponent>
             </div>
         </>
